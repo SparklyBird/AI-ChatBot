@@ -35,6 +35,50 @@ Follow these steps to set up and run the project.
 -   **Visual Studio Build Tools** with the "Desktop development with C++" workload (required for `llama-cpp-python` compilation).
 
 ### 2. Clone the Repository
-```bash
-git clone [https://github.com/SparklyBird/AI-ChatBot.git](https://github.com/SparklyBird/AI-ChatBot.git)
+```
+git clone https://github.com/SparklyBird/AI-ChatBot.git
 cd AI-ChatBot
+```
+
+### 3. Set Up Python Environment
+Create and activate a Python virtual environment. This keeps the project's dependencies isolated.
+```
+# Create the virtual environment
+py -3.12 -m venv .venv
+
+# Activate the environment
+.\.venv\Scripts\activate
+```
+
+### 4. Install Dependencies
+Install all the required Python libraries using the requirements.txt file included in this repository.
+```
+pip install -r requirements.txt
+```
+
+### 5. Download Models
+-   **LLM Model:** Download a GGUF-format language model of your choice (e.g., WizardLM-13B-Uncensored.Q5_K_M.gguf). Create a folder named models in the project directory and place the .gguf file inside it.
+-   **SpaCy Language Model:** Run the following command in your activated terminal to download the English language model:
+```
+python -m spacy download en_core_web_lg
+```
+
+### 6. Configure API Key
+The chatbot uses the ElevenLabs API for Text-to-Speech.
+-   Sign up for a free account at ElevenLabs and get your API key from your profile page.
+-   In the root of the project folder, create a new file named .env.
+-   Add your API key to the .env file in this exact format:
+```
+ELEVEN_API_KEY="your_actual_api_key_here"
+```
+
+### How to Use
+
+Once all the setup steps are complete, run the main.py script from your activated terminal:
+```
+python main.py
+```
+The application will load all the models and present you with a User: prompt. Type your questions to interact with the bot. To exit the application, type quit or press Ctrl+C.
+
+### License
+This project is licensed under the MIT License. See the LICENSE file for details.
