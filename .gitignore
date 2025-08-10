@@ -1,0 +1,24 @@
+# Python Virtual Environment
+.venv/
+
+# IDE and Cache Folders
+.idea/
+__pycache__/
+
+# Secret API Keys
+.env
+
+# Large Model Files (instruct users to download these separately)
+models/
+tts_models/
+rvc_models/
+
+# Database File (changes too often and is generated automatically)
+memory.db
+
+# Downloaded Python Wheel Files
+*.whl
+
+# Other specific files to ignore
+together.txt
+temp_base_audio.wav
